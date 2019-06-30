@@ -88,11 +88,23 @@ You can run the following command to see a list of all images available on your 
 
 ## Run Docker image
 
+Docker image can be instantiated or run using any of the below methods:
+
+### Method 1
+
 A Docker container is an instance of your app, created from the definition and resources from your Docker image.
 
 To run your app in a container, run the following command:
 
     docker run -it --rm -p 4873:4873 spr-npmregistry
+
+Once the command completes, browse to http://localhost:8081/.
+
+### Method 2
+
+To run your app in a container, run the following command:
+
+    docker-compose -f docker-compose.yaml up -d
 
 Once the command completes, browse to http://localhost:8081/.
 
