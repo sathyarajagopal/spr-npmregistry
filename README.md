@@ -43,18 +43,14 @@ Open the Dockerfile in the text editor of your choice and replace the contents w
     FROM node:latest
 
     RUN git clone  https://github.com/sathyarajagopal/spr-npmregistry.git && \
-        chown -R verdaccio /spr-npmregistry
+        chown -R node /spr-npmregistry
 
     WORKDIR /spr-npmregistry
-    USER verdaccio 
-    RUN rm package-lock.json && \
-        npm install
-
-    USER root	 
-    RUN npm link --unsafe-perm
+    USER node 
+    RUN npm install
 
     WORKDIR /spr-npmregistry
-    USER verdaccio
+    USER node
     CMD npm run start
 
     EXPOSE 4873
@@ -137,7 +133,7 @@ Now run the below command to remove the containers.
 
     docker system prune -a
 
-Congratulations! You've successfully created a small, independent Highcharts node export server that can be deployed and scaled using Docker containers.
+Congratulations! You've successfully created a small, independent NPM registry that can be deployed and scaled using Docker containers.
 
 These are the fundamental building blocks to get a Node.js application into a Docker container.
 

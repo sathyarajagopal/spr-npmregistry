@@ -12,4 +12,3 @@ USER node
 CMD npm run start
 
 EXPOSE 4873
-# ENTRYPOINT ["/usr/local/bin/npm", "run", "start"]
