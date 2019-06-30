@@ -1,9 +1,8 @@
 FROM node:latest
 
+WORKDIR /
 RUN git clone  https://github.com/sathyarajagopal/spr-npmregistry.git && \
     chown -R node /spr-npmregistry
-
-RUN ls -la /spr-npmregistry
 
 ENV VERDACCIO_APPDIR=/spr-npmregistry \
     VERDACCIO_USER_NAME=verdaccio \
@@ -13,7 +12,6 @@ ENV VERDACCIO_APPDIR=/spr-npmregistry \
 ENV PATH=$VERDACCIO_APPDIR/node_modules/verdaccio/bin:$PATH
 
 WORKDIR /spr-npmregistry
-RUN ls -la
 USER node 
 RUN npm install
 
@@ -24,4 +22,4 @@ RUN npm install
 
 EXPOSE $VERDACCIO_PORT
 
-CMD verdaccio --config /conf/registry-config.yaml --listen $VERDACCIO_PROTOCOL://0.0.0.0:$VERDACCIO_PORT
+CMD verdaccio --config ./conf/registry-config.yaml --listen $VERDACCIO_PROTOCOL://0.0.0.0:$VERDACCIO_PORT
