@@ -1,0 +1,22 @@
+{
+    "name": "spr-npmregistry",
+    "version": "1.0.0",
+    "description": "A lightweight private NPM registry using Verdaccio",
+    "author": "Sathya Prabu Rajagopal",
+    "scripts": {
+        "start": "verdaccio",
+        "start_local": "npm start -- --config ./registry-config.yaml --listen 0.0.0.0:4873"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sathyarajagopal/spr-npmregistry.git"
+    },
+    "keywords": [
+        "docker",
+        "sinopia",
+        "verdaccio"
+    ],
+    "dependencies": {
+        "verdaccio": "^4.0.4"
+    }
+}
