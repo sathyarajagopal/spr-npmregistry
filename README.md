@@ -92,7 +92,7 @@ A Docker container is an instance of your app, created from the definition and r
 
 To run your app in a container, run the following command:
 
-    docker run -it --rm -p 8081:7801 spr-npmregistry
+    docker run -it --rm -p 4873:4873 spr-npmregistry
 
 Once the command completes, browse to http://localhost:8081/.
 
@@ -146,3 +146,5 @@ These are the fundamental building blocks to get a Node.js application into a Do
 5. https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image
 6. https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
 7. https://docs.docker.com/engine/reference/builder/#entrypoint
+8. https://hub.docker.com/r/verdaccio/verdaccio/dockerfile
+9. Setup docker hub Verdaccio image running on a docker container using docker compose by mounting local drive - https://www.oskarlindgren.se/blog/private-npm-registry-with-verdaccio-2-2/
