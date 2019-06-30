@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  verdaccio:
+    container_name: 'verdaccio'
+    image: verdaccio/verdaccio:4.0.4
+    restart: always
+    ports:
+      - "4873:4873"
+    volumes:
+      - ./data:/spr-npmregistry/
